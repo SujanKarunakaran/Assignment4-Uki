@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sujan.demo.model.User1;
 import com.sujan.demo.services.UserService;
 
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/users")
 public class UserController {

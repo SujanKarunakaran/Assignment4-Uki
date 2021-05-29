@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const USER_API_BASE_URL = 'http://localhost:8080/users';
-const USER_API_BASE_URL_BOOK = 'http://localhost:8080/books';
+const USER_API_BASE_URL = 'https://book-shop-sujan.herokuapp.com/users';
+const USER_API_BASE_URL_BOOK = 'https://book-shop-sujan.herokuapp.com/books';
 
 class ApiService {
 
@@ -30,7 +30,7 @@ class ApiService {
     }
 
     fetchBookById(bookId) {
-        return axios.get(USER_API_BASE_URL_BOOK + '?id=' + bookId);
+        return axios.get(USER_API_BASE_URL + '?id=' + bookId);
     }
 
     deleteBook(bookId) {

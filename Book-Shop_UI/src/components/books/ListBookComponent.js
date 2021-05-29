@@ -74,14 +74,14 @@ class ListBookComponent extends Component {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell align="right">Id</TableCell>
-                            <TableCell align="right">title</TableCell>
-                            <TableCell align="right">author</TableCell>
-                            <TableCell align="right">coverPhotoURL</TableCell>
-                            <TableCell align="right">isbnNumber</TableCell>
-                            <TableCell align="right">price</TableCell>
-                            <TableCell align="right">language</TableCell>
-                            <TableCell align="right">genre</TableCell>
+                            <TableCell align="center">Id</TableCell>
+                            <TableCell align="center">title</TableCell>
+                            <TableCell align="center">author</TableCell>
+                            <TableCell align="center">coverPhotoURL</TableCell>
+                            <TableCell align="center">isbnNumber</TableCell>
+                            <TableCell align="center">price</TableCell>
+                            <TableCell align="center">language</TableCell>
+                            <TableCell align="center">genre</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -93,18 +93,18 @@ class ListBookComponent extends Component {
                         :
                         books.map(row => (
                             <TableRow key={row.id}>
-                                <TableCell align="right">
+                                <TableCell align="center">
                                     {row.id}
                                 </TableCell>
-                                <TableCell align="right">{row.title}</TableCell>
-                                <TableCell align="right">{row.author}</TableCell>
-                                <TableCell align="right">{row.coverPhotoURL}</TableCell>
-                                <TableCell align="right">{row.isbnNumber}</TableCell>
-                                <TableCell align="right">{row.price}</TableCell>
-                                <TableCell align="right">{row.language}</TableCell>
-                                <TableCell align="right">{row.genre}</TableCell>
-                                <TableCell align="right" onClick={() => this.editBook(row.id)}><CreateIcon /></TableCell>
-                                <TableCell align="right" onClick={() => this.deleteBook(row.id)}><DeleteIcon /></TableCell>
+                                <TableCell align="center">{row.title}</TableCell>
+                                <TableCell align="center">{row.author}</TableCell>
+                                <TableCell align="center">{row.coverPhotoURL}</TableCell>
+                                <TableCell align="center">{row.isbnNumber}</TableCell>
+                                <TableCell align="center">{row.price}</TableCell>
+                                <TableCell align="center">{row.language}</TableCell>
+                                <TableCell align="center">{row.genre}</TableCell>
+                                <TableCell align="center" onClick={() => this.editBook(row.id)}><CreateIcon /></TableCell>
+                                <TableCell align="center" onClick={() => this.deleteBook(row.id)}><DeleteIcon /></TableCell>
                             </TableRow>
                         ))
                     }

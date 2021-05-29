@@ -61,14 +61,18 @@ class EditBookComponent extends Component {
                 } else {
                     this.setState({show:false});
                 }
+                console.log(this.state.price)
+
             });
     }
 
     bookList = () => {
         return this.props.history.push('/books');
+        
     }
 
     render() {
+        console.log(this.state.price)
         return (
             <div>
                  <div style={{"display":this.state.show ? "block" : "none"}}>

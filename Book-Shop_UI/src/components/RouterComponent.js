@@ -17,7 +17,7 @@ const AppRouter = () => {
         <div>
             <Router>
                 <div className="col-md-6">
-                    <h1 className="text-center" style={style}>Book Shop User Application</h1>
+                    <br/>
                     <Switch>
                         <Route path="/admin_u" exact component={ListUserComponent} />
                         <Route path="/admin_u" component={ListUserComponent} />

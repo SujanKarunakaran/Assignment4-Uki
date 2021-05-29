@@ -1,6 +1,8 @@
 package com.sujan.demo.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -30,6 +32,18 @@ public class BookService {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	public ResponseEntity<List<BookModel>> listBooks() {
+		try {
+		    List<BookModel> books = new ArrayList<BookModel>();
+		    bookRepository.findAll().forEach(books::add);
+		    if (books.isEmpty()) {
+		      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		    }
+		    return new ResponseEntity<>(books, HttpStatus.OK);
+		} catch (Exception e) {
+		    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 	
 	public ResponseEntity<BookModel> updateBook(String id,BookModel book) {
 		Optional<BookModel>t=bookRepository.findById((id));
@@ -52,13 +66,13 @@ public class BookService {
 	
 	public ResponseEntity<Page<BookModel>> getBookBySearch(String searchText, int pageNo, int pageSize, String sortBy) {
 		try {
-		// List<BookModel> book = bookRepository.findByTitleContaining(title);
+//		 List<BookModel> book = bookRepository.findByTitleContaining(title);
 
 		Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
 		Page<BookModel> bookPages = bookRepository.searchBooks(pageable, ".*" + searchText + ".*");
-		// if (bookPages.isEmpty()) {
-		// return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		// }
+		 if (bookPages.isEmpty()) {
+		 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		 }
 		return new ResponseEntity<>(bookPages, HttpStatus.OK);
 		} catch (Exception e) {
 		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -85,23 +85,19 @@ class App extends Component {
                 )}
                 
                 {showAdminBoard && (
-                  <div>
+                 
                   <Button href="/admin_u" color='inherit'>
-                    <strong>Admin Board User</strong>
+                    <strong>Admin User</strong>
                   </Button>
+                  )}
 
+                {currentUser && (
                   <Button href="/admin_b" color='inherit'>
-                    <strong>Admin Board Book</strong>
-                  </Button>
-                  </div>
-                )}
-                {currentUser && (
-                  <Button href="/user" color='inherit'>
-                    <strong>User</strong>
+                    <strong>Book List</strong>
                   </Button>
                 )}
                 {currentUser && (
-                  <Button href="/user" color='inherit'>
+                  <Button href="/admin_b" color='inherit'>
                     <strong>Add Book</strong>
                   </Button>
                 )}

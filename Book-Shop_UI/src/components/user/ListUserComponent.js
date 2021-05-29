@@ -74,11 +74,11 @@ class ListUserComponent extends Component {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell align="right">Id</TableCell>
-                            <TableCell align="right">FirstName</TableCell>
-                            <TableCell align="right">LastName</TableCell>
-                            <TableCell align="right">Age</TableCell>
-                            <TableCell align="right">Salary</TableCell>
+                            <TableCell align="center">Id</TableCell>
+                            <TableCell align="center">FirstName</TableCell>
+                            <TableCell align="center">LastName</TableCell>
+                            <TableCell align="center">Age</TableCell>
+                            <TableCell align="center">Salary</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -90,15 +90,15 @@ class ListUserComponent extends Component {
                         :
                         users.map(row => (
                             <TableRow key={row.id}>
-                                <TableCell align="right">
+                                <TableCell align="center">
                                     {row.id}
                                 </TableCell>
-                                <TableCell align="right">{row.firstName}</TableCell>
-                                <TableCell align="right">{row.lastName}</TableCell>                                
-                                <TableCell align="right">{row.age}</TableCell>
-                                <TableCell align="right">{row.salary}</TableCell>
-                                <TableCell align="right" onClick={() => this.editUser(row.id)}><CreateIcon /></TableCell>
-                                <TableCell align="right" onClick={() => this.deleteUser(row.id)}><DeleteIcon /></TableCell>
+                                <TableCell align="center">{row.firstName}</TableCell>
+                                <TableCell align="center">{row.lastName}</TableCell>                                
+                                <TableCell align="center">{row.age}</TableCell>
+                                <TableCell align="center">{row.salary}</TableCell>
+                                <TableCell align="center" onClick={() => this.editUser(row.id)}><CreateIcon /></TableCell>
+                                <TableCell align="center" onClick={() => this.deleteUser(row.id)}><DeleteIcon /></TableCell>
                             </TableRow>
                         ))
                     }

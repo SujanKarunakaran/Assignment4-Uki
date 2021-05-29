@@ -1,5 +1,6 @@
 package com.sujan.demo.controllers;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sujan.demo.model.BookModel;
 import com.sujan.demo.services.BookService;
 
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/books")
 
@@ -36,6 +37,11 @@ public class BookController {
 	public ResponseEntity<BookModel> updateBook(@PathVariable String id,@RequestBody BookModel book) {
 	return bookService.updateBook(id, book);
 	} 
+	
+	@GetMapping
+    public ResponseEntity<List<BookModel>> listBooks(){
+		return bookService.listBooks();
+    }
 	
 	@GetMapping("/search/{search}")
 	public ResponseEntity<?> getBooks(@PathVariable String search, @RequestParam(value="pageNo",defaultValue="0") int pageNo,
